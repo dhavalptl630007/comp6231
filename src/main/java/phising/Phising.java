@@ -13,7 +13,7 @@ public class Phising {
 		SparkConf conf = new SparkConf().setAppName("Phising").setMaster("local");
 		JavaSparkContext sc = new JavaSparkContext(conf);
 		
-		JavaRDD<String> textFile = sc.textFile("C:/Users/Admin/Desktop/html.txt");
+		JavaRDD<String> textFile = sc.textFile("C:/Users/Admin/Desktop/netflix.txt");
 		
 		String url="http://netflix.hotmaster.dns-cloud.net/clienteseguro/site/index.html";
 		int having_IP_Address = checkIp(url);

