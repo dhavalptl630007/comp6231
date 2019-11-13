@@ -15,35 +15,137 @@ public class Phising {
 		
 		JavaRDD<String> textFile = sc.textFile("C:/Users/Admin/Desktop/html.txt");
 		
-		
-		
-		int URL_of_Anchor = hasURLAnchor(textFile);
-		int Submitting_to_email = hasSubmittingToEmail(textFile);
-	    int Redirect = hasRedirect(textFile);
-	    int on_mouseover = hasOnMouseOver(textFile);
-	    int RightClick = hasRightClickDisabled(textFile);
-	    int Iframe = hasIframe(textFile);
-	    
-		List<String> list = textFile.collect();
-		for (String string : list) {
-			//System.out.println(string);
-		}
-		
-		System.out.println(URL_of_Anchor);
-		
 		String url="http://netflix.hotmaster.dns-cloud.net/clienteseguro/site/index.html";
-		int outputHasIp = hasIp(url);
-		int outputCheckLength = checkLen(url);
-		int outputIsTiny = checkTiny(url);
-		int outputHaveAt = url.contains("@")? 1 : -1 ;
-		int outputHasRedirect = hasRedirect(url); 
-		int outputHasDash = url.contains("-")? 1 : -1 ;
-		int outputSubDomain = checkSubDomain(url);
-		int outputHasHttps = hasHttps(url);
+		int having_IP_Address = checkIp(url);
+		int URL_Length = checkLen(url);
+		int Shortining_Service = checkTiny(url);
+		int having_At_Symbol = url.contains("@")? 1 : -1 ;
+		int double_slash_redirecting = hasRedirect(url); 
+		int Prefix_Suffix = url.contains("-")? 1 : -1 ;
+		int having_Sub_Domain = checkSubDomain(url);
+		int SSLfinal_State = checkSSLFinalState();
+		int Domain_registeration_length = checkDomainRegisterationLength();
+		int Favicon = checkFavicon();
+		int port = checkPort();
+		int HTTPS_token = checkHttpsToken(url);
+		int Request_URL = checkRequestURL();
+		int URL_of_Anchor = checkURLAnchor(textFile);
+		int Links_in_tags = checkLinksInTags();
+		int SFH = checkSFH();
+		int Submitting_to_email = checkSubmittingToEmail(textFile);
+		int Abnormal_URL = checkAbnormalURL();	
+	    int Redirect = checkRedirect(textFile);	    
+	    int on_mouseover = checkOnMouseOver(textFile);
+	    int RightClick = checkRightClickDisabled(textFile);   
+	    int popUpWidnow = checkPopUpWidnow();    
+	    int Iframe = checkIframe(textFile);  
+	    int age_of_domain = checkAgeOfDomain();
+	    int DNSRecord = checkDNSRecord();   
+	    int web_traffic = checkWebTraffic();    
+	    int Page_Rank = checkPageRank();    
+	    int Google_Index = checkGoogleIndex();    
+	    int Links_pointing_to_page = checkLinksPointingToPage();    
+	    int Statistical_report = checkStatisticalReport(); 
+	    System.out.println(having_IP_Address+ "," + URL_Length + ","+Shortining_Service+","+ having_At_Symbol+","+ double_slash_redirecting+","+
+	    		 Prefix_Suffix+","+having_Sub_Domain +"," +SSLfinal_State+","+Domain_registeration_length+","+Favicon+","+port+","+HTTPS_token+","+Request_URL+","+URL_of_Anchor+","+Links_in_tags+","+
+	    		 SFH+","+Submitting_to_email+","+Abnormal_URL+","+Redirect+","+on_mouseover+","+RightClick+","+popUpWidnow+","+Iframe+","+age_of_domain+","+DNSRecord+","+web_traffic+","+Page_Rank+","+Google_Index+","+
+	    		 Links_pointing_to_page+","+ Statistical_report); 
+	    
 	}
 	
 
-	private static int hasURLAnchor(JavaRDD<String> textFile) {
+	private static int checkStatisticalReport() {
+		
+		return 1;
+	}
+
+
+	private static int checkLinksPointingToPage() {
+	
+		return 1;
+	}
+
+
+	private static int checkGoogleIndex() {
+	
+		return 1;
+	}
+
+
+	private static int checkPageRank() {
+	
+		return 1;
+	}
+
+
+	private static int checkWebTraffic() {
+	
+		return 1;
+	}
+
+
+	private static int checkDNSRecord() {
+
+		return 1;
+	}
+
+
+	private static int checkAgeOfDomain() {
+		
+		return 1;
+	}
+
+
+	private static int checkPopUpWidnow() {
+
+		return 1;
+	}
+
+
+	private static int checkAbnormalURL() {
+		return 1;
+	}
+
+
+	private static int checkSFH() {
+		return 1;
+	}
+
+
+	private static int checkLinksInTags() {
+		return 1;
+	}
+
+
+	private static int checkRequestURL() {
+		
+		return 1;
+	}
+
+
+	private static int checkPort() {
+		
+		return 1;
+	}
+
+
+	private static int checkFavicon() {
+		return 1;
+	}
+
+
+	private static int checkDomainRegisterationLength() {
+	
+		return 1;
+	}
+
+
+	private static int checkSSLFinalState() {
+		return 1;
+	}
+
+
+	private static int checkURLAnchor(JavaRDD<String> textFile) {
 		
 		double numberOfAnchor = filterAndCount(textFile,"<a href");
 		double hasAAnchor = filterAndCount(textFile,"<a href=\"#\" ");
@@ -73,7 +175,7 @@ public class Phising {
 	
 
 
-	private static int hasIframe(JavaRDD<String> textFile) {
+	private static int checkIframe(JavaRDD<String> textFile) {
 		if (filterAndCount(textFile,"iframe")>0 ) {
 			return -1;
 		} else {
@@ -82,7 +184,7 @@ public class Phising {
 	}
 
 
-	private static int hasRightClickDisabled(JavaRDD<String> textFile) {
+	private static int checkRightClickDisabled(JavaRDD<String> textFile) {
 		if (filterAndCount(textFile,"onMouseOver")>0 ) {
 			return -1;
 		} else {
@@ -91,7 +193,7 @@ public class Phising {
 	}
 
 
-	private static int hasOnMouseOver(JavaRDD<String> textFile) {
+	private static int checkOnMouseOver(JavaRDD<String> textFile) {
 		if (filterAndCount(textFile,"event.button==2")>0 ) {
 			return -1;
 		} else {
@@ -100,7 +202,7 @@ public class Phising {
 	}
 
 
-	private static int hasRedirect(JavaRDD<String> textFile) {
+	private static int checkRedirect(JavaRDD<String> textFile) {
 
 		if(filterAndCount(textFile,"window.location")>0 ||filterAndCount(textFile,"<meta http-equiv=\"refresh\" ") >0 ) {
 			return -1;
@@ -112,7 +214,7 @@ public class Phising {
 	}
 
 
-	private static int hasSubmittingToEmail(JavaRDD<String> textFile) {
+	private static int checkSubmittingToEmail(JavaRDD<String> textFile) {
 		
 		if(filterAndCount(textFile,"mail()")>0 ||filterAndCount(textFile,"mailto") >0 ) {
 		return -1;
@@ -123,7 +225,7 @@ public class Phising {
 		}
 	}
 
-	private static int hasHttps(String url) {
+	private static int checkHttpsToken(String url) {
 		String [] parts = url.split("//");
 		if(parts.length >=2) {
 			if(parts[1].contains("https")) {
@@ -182,7 +284,7 @@ public class Phising {
 		return -1;
 	}
 	
-	private static int hasIp(String url) {
+	private static int checkIp(String url) {
 		String []urlParts= url.split("/");
 		StringBuilder sb =new StringBuilder();
 		sb.append(urlParts[0]);
